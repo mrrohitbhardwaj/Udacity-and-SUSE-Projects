@@ -25,7 +25,7 @@ jobs:
         uses: docker/login-action@v1 
         with:
           username: ${{ secrets.mrrohitbhardwaj }}
-          password: ${{ secrets.Rohit@Docker@LoginPassword0 }}
+          password: ${{ secrets.RohDocLogPas3 }}
       -
         name: Build and push
         id: docker_build
