@@ -4,10 +4,10 @@ name: TechTrends - Package with Docker
 
 on
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-latest
     steps:
       -
@@ -23,17 +23,15 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.mrrohitbhardwaj }}
-          password: ${{ secrets.RohDocLogPas3 }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./CNAA
-          file: ./CNAA/Dockerfile
+          context: .
+          file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: techtrends:latest
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.GITUHUB_SECRET_ACCESS_TOKEN_TECHTRENDS }}
+          tags: mrrohitbhardwaj/techtrends:latest
