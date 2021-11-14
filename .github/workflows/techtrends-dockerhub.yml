@@ -2,8 +2,7 @@
 
 name: TechTrends - Package with Docker
 
-on:
-  workflow_dispatch:
+on
   push:
     branches: [main]
 
