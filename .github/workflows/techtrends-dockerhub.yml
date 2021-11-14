@@ -29,5 +29,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          platforms: linux/amd64
           push: true
           tags: techtrends:latest
