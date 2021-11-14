@@ -3,12 +3,11 @@
 name: TechTrends - Package with Docker
 
 on:
-  workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-latest
     steps:
       -
@@ -35,4 +34,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: techtrends:latest
+          tags: mrrohitbhardwaj/techtrends:latest
