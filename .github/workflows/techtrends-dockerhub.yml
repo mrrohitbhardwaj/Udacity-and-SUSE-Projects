@@ -25,7 +25,7 @@ jobs:
         uses: docker/login-action@v1 
         with:
           username: ${{ secrets.mrrohitbhardwaj }}
-          password: ${{ secrets.RohDocLogPas3 }}
+          password: ${{ secrets.8438abd6-2517-4de6-9482-3629c479e1ce }}
       -
         name: Build and push
         id: docker_build
@@ -37,4 +37,4 @@ jobs:
           push: true
           tags: techtrends:latest
           secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.GITUHUB_SECRET_ACCESS_TOKEN_TECHTRENDS }}
+            GIT_AUTH_TOKEN=${{ secrets.techtrendsgithubaccesstoken }}
