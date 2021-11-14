@@ -1,0 +1,32 @@
+WARNING:werkzeug:2021-11-13 23:13:34,212: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug:2021-11-13 23:13:34,214: * Running on http://100.127.255.253:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2021-11-13 23:13:44,976:192.168.0.104 - - [13/Nov/2021 23:13:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:13:46,159:192.168.0.104 - - [13/Nov/2021 23:13:46] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:2021-11-13 23:13:53,827:The "About Us" page is retrieved.
+INFO:werkzeug:2021-11-13 23:13:53,838:192.168.0.104 - - [13/Nov/2021 23:13:53] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:13:53,988:192.168.0.104 - - [13/Nov/2021 23:13:53] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:2021-11-13 23:14:01,605:192.168.0.104 - - [13/Nov/2021 23:14:01] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:14:01,726:192.168.0.104 - - [13/Nov/2021 23:14:01] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:2021-11-13 23:14:04,878:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:2021-11-13 23:14:04,888:192.168.0.104 - - [13/Nov/2021 23:14:04] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:14:05,013:192.168.0.104 - - [13/Nov/2021 23:14:05] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:2021-11-13 23:15:59,218:192.168.0.104 - - [13/Nov/2021 23:15:59] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:15:59,352:192.168.0.104 - - [13/Nov/2021 23:15:59] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:2021-11-13 23:16:11,355:Article "test7" created!
+INFO:werkzeug:2021-11-13 23:16:11,358:192.168.0.104 - - [13/Nov/2021 23:16:11] "[32mPOST /create HTTP/1.1[0m" 302 -
+INFO:werkzeug:2021-11-13 23:16:11,384:192.168.0.104 - - [13/Nov/2021 23:16:11] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:16:11,546:192.168.0.104 - - [13/Nov/2021 23:16:11] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:2021-11-13 23:17:02,125:192.168.0.104 - - [13/Nov/2021 23:17:02] "[33mGET /notfound HTTP/1.1[0m" 404 -
+INFO:werkzeug:2021-11-13 23:17:17,325:192.168.0.104 - - [13/Nov/2021 23:17:17] "[33mGET /hello HTTP/1.1[0m" 404 -
+INFO:werkzeug:2021-11-13 23:17:25,985:192.168.0.104 - - [13/Nov/2021 23:17:25] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:17:26,160:192.168.0.104 - - [13/Nov/2021 23:17:26] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:2021-11-13 23:18:47,339:192.168.0.104 - - [13/Nov/2021 23:18:47] "[33mGET /404.html HTTP/1.1[0m" 404 -
+INFO:werkzeug:2021-11-13 23:20:29,717:192.168.0.104 - - [13/Nov/2021 23:20:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:20:29,927:192.168.0.104 - - [13/Nov/2021 23:20:29] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:2021-11-13 23:20:30,896:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:2021-11-13 23:20:30,898:192.168.0.104 - - [13/Nov/2021 23:20:30] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-13 23:20:31,025:192.168.0.104 - - [13/Nov/2021 23:20:31] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:app:2021-11-13 23:20:35,077:A non-existing article is accessed.
+INFO:werkzeug:2021-11-13 23:20:35,086:192.168.0.104 - - [13/Nov/2021 23:20:35] "[33mGET /52 HTTP/1.1[0m" 404 -
+INFO:werkzeug:2021-11-13 23:20:35,223:192.168.0.104 - - [13/Nov/2021 23:20:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -

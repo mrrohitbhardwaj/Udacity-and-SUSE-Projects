@@ -1,0 +1,27 @@
+## Docker commands used to build the application 
+# TODO: insert the docker build command
+docker build -t techtrends .
+
+## Docker commands used to run the application
+# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
+
+# To lists all containers that are up and running, and find the docker container ID for running application logs, I have used the following command
+docker ps
+
+## Docker commands used to get the application logs
+# TODO: insert the docker logs command
+docker logs 0a5caa57184e
+
+## Logs from the container running the TechTrends application
+# TODO: paste logs from the Docker container 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
