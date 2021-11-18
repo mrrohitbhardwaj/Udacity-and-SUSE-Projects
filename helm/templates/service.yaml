@@ -15,3 +15,4 @@ spec:
     app: techtrends
     tag: {{ .Values.image.tag }}
   type: {{ .Values.service.type }}
+  
