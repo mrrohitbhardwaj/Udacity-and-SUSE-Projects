@@ -23,5 +23,16 @@ resources:
     memory: 256Mi
 
 containerPort: 3111
-livenessProbePath: /healthz
-readinessProbePath: /healthz
+
+livenessProbe:
+  initialDelaySeconds: 5
+  httpGet:
+    path: /healthz
+    port: 3111
+
+readinessProbe:
+  initialDelaySeconds: 5
+  httpGet:
+    path: /healthz
+    port: 3111
+
