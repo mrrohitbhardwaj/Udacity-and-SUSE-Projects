@@ -1,4 +1,4 @@
-namespace:
+namespace: argocd
   name: staging
   
 service:
