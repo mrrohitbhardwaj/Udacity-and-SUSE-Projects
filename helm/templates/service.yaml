@@ -4,7 +4,11 @@ metadata:
   labels:
     app: techtrends
     tag: {{ .Values.image.tag }}
+<<<<<<< HEAD
   name: {{ include "helm-techtrends.fullname" . }}
+=======
+  name: techtrends
+>>>>>>> e26464f9c64d873ccae0b8b6b52712ac6b94047b
   namespace: {{ .Values.namespace.name }} 
 spec:
   ports:
@@ -14,4 +18,9 @@ spec:
   selector:
     app: techtrends
     tag: {{ .Values.image.tag }}
+<<<<<<< HEAD
   type: {{ .Values.service.type }}
+=======
+  type: {{ .Values.service.type }}
+  
+>>>>>>> e26464f9c64d873ccae0b8b6b52712ac6b94047b

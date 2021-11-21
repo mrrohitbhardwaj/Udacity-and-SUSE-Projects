@@ -1,9 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+<<<<<<< HEAD
   labels: {{- include "helm-techtrends.labels" . | nindent 4 }}
     app: techtrends
   name: {{ include "helm-techtrends.fullname" . }}
+=======
+  labels:
+    app: techtrends
+  name: techtrends
+>>>>>>> e26464f9c64d873ccae0b8b6b52712ac6b94047b
   namespace: {{ .Values.namespace.name }} 
 spec:
   replicas: {{ .Values.replicaCount }} 
@@ -21,6 +27,7 @@ spec:
         app: techtrends
     spec:
       containers:
+<<<<<<< HEAD
         - 
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -45,3 +52,27 @@ spec:
               memory: {{ .Values.resources.limits.memory }}
 
 
+=======
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: techtrends
+        ports:
+            - containerPort: {{ .Values.containerPort }}
+              protocol: {{ .Values.service.protocol }}
+        livenessProbe:
+           httpGet:
+             path: {{ .Values.livenessProbePath }}
+             port: {{ .Values.containerPort }}
+        readinessProbe:
+           httpGet:
+             path: {{ .Values.readinessProbePath }}
+             port: {{ .Values.containerPort }}
+        resources:
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}
+          limits:
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
+            
+>>>>>>> e26464f9c64d873ccae0b8b6b52712ac6b94047b
