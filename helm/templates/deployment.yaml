@@ -1,63 +1,47 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels: {{- include "helm-techtrends.labels" . | nindent 4 }}
+    app: techtrends
   name: {{ include "helm-techtrends.fullname" . }}
-  labels:
-    {{- include "helm-techtrends.labels" . | nindent 4 }}
+  namespace: {{ .Values.namespace.name }} 
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
-      {{- include "helm-techtrends.selectorLabels" . | nindent 6 }}
+      app: techtrends
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
-        {{- include "helm-techtrends.selectorLabels" . | nindent 8 }}
+        app: techtrends
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "helm-techtrends.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        - 
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          name: {{ include "helm-techtrends.fullname" . }}
           ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+              - containerPort: {{ .Values.containerPort }}
+                protocol: {{ .Values.service.protocol }}
           livenessProbe:
             httpGet:
-              initialDelaySeconds: {{ .Values.initialDelaySeconds }}
-              path: /healthz
-              port: 3111
+              path: {{ .Values.livenessProbePath }}
+              port: {{ .Values.containerPort }}
           readinessProbe:
             httpGet:
-              initialDelaySeconds: {{ .Values.initialDelaySeconds }}
-              path: /healthz
-              port: 3111
+              path: {{ .Values.readinessProbePath }}
+              port: {{ .Values.containerPort }}
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+
+

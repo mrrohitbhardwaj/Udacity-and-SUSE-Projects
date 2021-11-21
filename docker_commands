@@ -11,7 +11,7 @@ docker ps
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
-docker logs 0a5caa57184e
+docker logs 29c1a8e3c0cd
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
@@ -20,8 +20,10 @@ docker logs 0a5caa57184e
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
+INFO:werkzeug:2021-11-19 22:46:17,761,  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2021-11-19 22:46:28,177, 172.17.0.1 - - [19/Nov/2021 22:46:28] "GET / HTTP/1.1" 200 -
+INFO:root:2021-11-19 22:46:43,824, Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:2021-11-19 22:46:43,874, 172.17.0.1 - - [19/Nov/2021 22:46:43] "GET /1 HTTP/1.1" 200 -
+INFO:root:2021-11-19 22:46:58,565, The "About Us" page is retrieved.
+INFO:werkzeug:2021-11-19 22:46:58,612, 172.17.0.1 - - [19/Nov/2021 22:46:58] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2021-11-19 22:47:11,874, 172.17.0.1 - - [19/Nov/2021 22:47:11] "GET / HTTP/1.1" 200 -
